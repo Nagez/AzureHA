@@ -1,12 +1,27 @@
 # -------------------
 # Terraform
 # -------------------
+# Terraform state
 *.tfstate
 *.tfstate.*
 .terraform/
-.crash/
-*.tfplan
+.terraform.lock.hcl
+
+# Sensitive variable files
 terraform.tfvars
-override.tf
-override.tf.json
-terraform/.terraform.lock.hcl
+*.tfvars
+
+# Plan files
+*.tfplan
+
+# Crash logs
+crash.log
+
+# Ignore backup files
+*.bak
+
+# Local IDE configs (optional, if using VSCode)
+.vscode/
+
+terraform/windows_amd64/LICENSE.txt
+terraform/windows_amd64/terraform-provider-azurerm_v4.34.0_x5.exe
