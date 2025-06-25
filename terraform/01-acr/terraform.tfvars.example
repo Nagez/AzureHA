@@ -1,6 +1,0 @@
-# Values for variables.tf
-
-# acr name need to be unique
-acr_name = "orserviceaacr123456"   
-
-subscription_id = "replace_with_our_subscription_id"
