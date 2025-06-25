@@ -25,3 +25,4 @@ crash.log
 
 terraform/windows_amd64/LICENSE.txt
 terraform/windows_amd64/terraform-provider-azurerm_v4.34.0_x5.exe
+terraform/02-aks/tfplan
