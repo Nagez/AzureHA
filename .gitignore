@@ -7,10 +7,6 @@
 .terraform/
 .terraform.lock.hcl
 
-# Sensitive variable files
-terraform.tfvars
-*.tfvars
-
 # Plan files
 *.tfplan
 

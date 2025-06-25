@@ -78,7 +78,7 @@ def print_average(prices):
 def main():
     log("Starting service-A")
     
-    # Calculate how many price checks should occur before printing the average.
+    # num_cycles calculate how many price checks should occur before printing the average.
     # For example, with INTERVAL = 60s and AVG_INTERVAL = 600s, this will collect 10 prices (1 per minute for 10 minutes).
     num_cycles = AVG_INTERVAL // INTERVAL
 

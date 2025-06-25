@@ -1,4 +1,5 @@
 # use acr terraform
+cd .\terraform\01-acr\
 
 # use aks terraform
 
@@ -6,6 +7,7 @@
 az aks update -n service-a-cluster -g service-a-cluster-rg --attach-acr orserviceaacr123456
 
 #create and register docker image
+cd .\service-A\
 docker build -t orserviceaacr123456.azurecr.io/service-a:latest .
 az acr login --name orserviceaacr123456
 docker push orserviceaacr123456.azurecr.io/service-a:latest
