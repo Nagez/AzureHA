@@ -35,6 +35,17 @@ def log(message):
     print(f"[{get_timestamp()}] {message}")
 
 
+def update_liveness():
+    """
+    Create a tmp file for readiness and liveliness probe check (for kubernetes).
+    """
+    try:
+        with open("/tmp/alive", "w") as f:
+            f.write(str(time.time()))
+    except Exception as e:
+        log(f"Failed to update liveness file: {e}")
+
+
 def fetch_bitcoin_price():
     """
     Returns the bitcoin price from an API.
@@ -80,9 +91,11 @@ def main():
             if price is not None:
                 prices.append(price)
                 log(f"Bitcoin price in {CURRENCY.upper()}: ${price:.2f}")
+                update_liveness()
             # Print the average in the last cycle    
             if i == num_cycles - 1:
                 print_average(prices)
+
             # Wait between each value retrived    
             time.sleep(INTERVAL)
 

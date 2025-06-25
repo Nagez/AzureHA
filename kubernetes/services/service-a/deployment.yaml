@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-a
+  template:
+    metadata:
+      labels:
+        app: service-a
+    spec:
+      serviceAccountName: service-a-sa
+      containers:
+        - name: service-a-container
+          image: orserviceaacr123456.azurecr.io/service-a:latest
+          # No HTTP port exposed because the app is a background job
+          livenessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - >
+                  test -f /tmp/alive &&
+                  test $(( $(date +%s) - $(stat -c %Y /tmp/alive) )) -lt 180
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - test -f /tmp/alive
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 1
