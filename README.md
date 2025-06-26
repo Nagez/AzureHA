@@ -17,4 +17,4 @@ About the process at high level:
 6. networking and other configurations are applied.
 7. running the roll out automation also verify service-a to b connectivity and pods health.
 
-to delete the resouces you can run terraform destroy from both the terraform directories.
+to delete the resources you can run terraform destroy from both the terraform directories.
