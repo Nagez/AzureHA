@@ -1,12 +1,13 @@
-Hello again,
-I hope all is well.
+Automated AKS Infrastructure and App Deployment on Azure
+This repository showcases an automated deployment pipeline for microservices on Azure Kubernetes Service (AKS).
+It uses Terraform for infrastructure, Docker for image builds, and Kubernetes deployments.
+
 
 To run the buildout automatically use: pyython auto-rollout.py
 The automation will only request for azure login and azure subscription-id for the terraform at first.
 It will also check if you have az-cli, terraform, docker, kubectl and helm since they are all required for the buildout.
 
 You can also run the it manually with the commands in manual.sh one after the other.
-
 
 About the process at high level:
 1. terraform will create resource group with acr and aks.
@@ -18,3 +19,5 @@ About the process at high level:
 7. running the roll out automation also verify service-a to b connectivity and pods health.
 
 to delete the resources you can run terraform destroy from both the terraform directories.
+
+**Tech Stack:** Azure, AKS, ACR, Terraform, Docker, Kubernetes, Python
