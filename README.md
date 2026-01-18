@@ -4,7 +4,7 @@ This repository showcases an automated deployment pipeline for microservices on 
 It uses Terraform for infrastructure, Docker for image builds, and Kubernetes deployments.
 
 
-To run the buildout automatically use: pyython auto-rollout.py
+To run the buildout automatically use: python auto-rollout.py
 The automation will only request for azure login and azure subscription-id for the terraform at first.
 It will also check if you have az-cli, terraform, docker, kubectl and helm since they are all required for the buildout.
 
