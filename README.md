@@ -1,4 +1,5 @@
 Automated AKS Infrastructure and App Deployment on Azure
+
 This repository showcases an automated deployment pipeline for microservices on Azure Kubernetes Service (AKS).
 It uses Terraform for infrastructure, Docker for image builds, and Kubernetes deployments.
 
